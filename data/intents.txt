@@ -1,0 +1,171 @@
+# =====================================================================
+#  Nova Chatbot - Knowledge Base
+#
+#  Format:
+#    [tag]                     starts a new intent (topic)
+#    patterns:  a | b | c      example things a user might say
+#    responses: x | y | z      possible replies (one is picked at random)
+#
+#  Placeholders in responses:
+#    {name}  the user's name if they shared it, otherwise "friend"
+#    {bot}   the bot's name
+#
+#  Lines starting with # are comments. You can teach Nova a new topic
+#  just by adding a block here - no Java changes needed.
+# =====================================================================
+
+# ---------------- Small talk ----------------
+
+[greeting]
+patterns: hello | hi | hey | hiya | howdy | hi there | hello there | hey there | good morning | good afternoon | good evening | greetings | yo
+responses: Hello {name}! How can I help you today? | Hi {name}! What's on your mind? | Hey {name}! Great to see you.
+
+[goodbye]
+patterns: bye | goodbye | bye bye | see you later | see ya | talk to you later | i have to go | gotta go | good night | catch you later | farewell | quit | exit
+responses: Goodbye {name}! Have a great day. | See you later, {name}! | Bye! It was nice chatting with you.
+
+[thanks]
+patterns: thanks | thank you | thanks a lot | thank you so much | i appreciate it | thx | ty | that was helpful | that helped
+responses: You're welcome, {name}! | Happy to help! | Anytime! That's what I'm here for.
+
+[how_are_you]
+patterns: how are you | how are you doing | how is it going | how's it going | how have you been | what's up | sup | how do you feel
+responses: I'm doing great, thanks for asking! How about you? | I'm just a bunch of Java classes, but I'm running smoothly! How are you? | Feeling fantastic and ready to chat!
+
+[feeling_good]
+patterns: i am good | i'm good | i'm fine | i am doing well | i'm great | doing great | pretty good | not bad | i'm happy | i feel awesome
+responses: That's great to hear, {name}! | Awesome! What would you like to talk about? | Glad you're doing well!
+
+[feeling_bad]
+patterns: i am sad | i feel sad | i'm not doing well | i'm feeling down | i'm stressed | i feel tired | i'm upset | bad day | i'm having a rough day | i feel lonely
+responses: I'm sorry you're feeling that way, {name}. Want to talk about it? | That sounds tough. Remember to take a break and be kind to yourself. | I'm here for you. Sometimes a short walk or a chat with a friend can help.
+
+[bored]
+patterns: i'm bored | i am bored | so boring | nothing to do | entertain me
+responses: Want to hear a joke? Just say "tell me a joke". | How about a fun fact? Say "tell me a fun fact". | Try giving me a math problem, like "what is (15 + 5) * 3".
+
+[compliment]
+patterns: you are smart | you're awesome | you are great | good job | well done | you are cool | i like you | i love you | you're funny | nice
+responses: Thank you, {name}! You're pretty awesome yourself. | Aw, thanks! That made my day. | Thanks! I'm only as good as the code behind me.
+
+[insult]
+patterns: you are dumb | you're stupid | you are useless | you suck | you're bad | i hate you | you are annoying
+responses: I'm sorry I let you down. I'm still learning! Try rephrasing your question. | Ouch! I'll try to do better. Type /topics to see what I'm good at.
+
+# ---------------- About the bot ----------------
+
+[bot_identity]
+patterns: who are you | what are you | what is your name | what's your name | tell me about yourself | introduce yourself | are you a robot | are you human | are you a bot
+responses: I'm {bot}, a chatbot written in Java! | My name is {bot}. I'm a Java program that uses data structures and algorithms to understand you. | I'm {bot}, your friendly Java chatbot. Not human, but I try my best!
+
+[creator]
+patterns: who made you | who created you | who built you | who is your creator | who programmed you | who wrote you
+responses: I was built in Java by Deepak as a portfolio project to show off object-oriented programming and algorithms. | A developer by the name of Deepak created me using pure Java with no external libraries!
+
+[age]
+patterns: how old are you | what is your age | when were you born | when were you created
+responses: I was born the moment you ran this program, so I'm very young! | In computer years, I'm only a few seconds old.
+
+[capabilities]
+patterns: what can you do | help | what do you know | how can you help me | what are your features | what can i ask you | show me what you can do
+responses: I can chat, tell jokes and fun facts, do math (try "what is 12 * (3 + 4)"), tell the time, remember your name, and explain programming ideas like stacks, queues and hash maps. Type /help for commands.
+
+[how_it_works]
+patterns: how do you work | how do you understand me | how were you made | how do you know what to say | explain how you work
+responses: I clean up your message, fix typos with an edit-distance algorithm, turn the words into a TF-IDF vector, and compare it to example sentences using cosine similarity. The closest match decides my answer.
+
+[ai]
+patterns: what is ai | what is artificial intelligence | are you intelligent | are you smart | what is machine learning | what is nlp | what is natural language processing
+responses: Artificial intelligence is about making computers do tasks that normally need human intelligence. I'm a simple retrieval-based chatbot: I use natural language processing (NLP) to find the closest topic I know. | AI covers many techniques, from simple rules to neural networks. I use classic NLP ideas like tokenizing, stemming and TF-IDF vectors.
+
+[favorite]
+patterns: what is your favorite color | what's your favorite food | what do you like | what is your favorite programming language | what is your favorite thing
+responses: My favorite programming language is Java, of course! | I like clean code, well-named variables, and O(1) lookups. | I'd say coffee-colored. You know, like Java.
+
+# ---------------- Fun ----------------
+
+[joke]
+patterns: tell me a joke | joke | say something funny | make me laugh | do you know any jokes | i want to hear a joke | tell me something funny
+responses: Why do Java developers wear glasses? Because they don't C#! | Why did the programmer quit his job? He didn't get arrays. | How many programmers does it take to change a light bulb? None, that's a hardware problem. | A SQL query walks into a bar, walks up to two tables and asks: "Can I join you?" | Why do programmers prefer dark mode? Because light attracts bugs!
+
+[fun_fact]
+patterns: tell me a fun fact | fun fact | tell me something interesting | did you know | teach me something | random fact | tell me a fact
+responses: Honey never spoils. Archaeologists have found honey thousands of years old in Egyptian tombs that was still edible. | Octopuses have three hearts and blue blood. | The first computer "bug" was a real moth found inside a Harvard computer in 1947. | Java was originally called Oak, named after a tree outside James Gosling's office. | A day on Venus is longer than a year on Venus.
+
+[follow_up]
+patterns: another one | another | tell me another | one more | more | again | do it again | give me another | next one | more please
+responses: Another what? Ask me for a joke or a fun fact first! | Happy to give you more, but more of what? Try asking for a joke.
+
+[motivation]
+patterns: motivate me | i need motivation | inspire me | give me a quote | i want to give up | encourage me | say something inspiring
+responses: The expert in anything was once a beginner. Keep going, {name}! | Every bug you fix makes you a better programmer. | Small progress is still progress. You've got this!
+
+[study_tips]
+patterns: study tips | how do i study | how can i study better | help me focus | how to learn programming | how do i get better at coding | tips for learning
+responses: Try the Pomodoro technique: 25 minutes of focused work, then a 5 minute break. | Practice a little every day. Short, consistent sessions beat one long cram session. | When learning to code, build small projects. You learn the most by debugging your own mistakes!
+
+[weather]
+patterns: what's the weather | what's the weather like | how's the weather | how is the weather | is it going to rain | weather today | is it hot outside | is it cold outside | weather forecast
+responses: I run offline, so I can't check live weather. A weather app will know! | I don't have internet access, so I can't see the forecast. I hope it's sunny where you are, {name}!
+
+# ---------------- Computer science ----------------
+
+[java]
+patterns: what is java | tell me about java | why use java | what is java used for | is java hard to learn
+responses: Java is an object-oriented language released by Sun Microsystems in 1995. Its motto is "write once, run anywhere" because code runs on the Java Virtual Machine (JVM). | Java powers Android apps, enterprise back-end systems and big data tools. It is strongly typed and object-oriented, which keeps large programs organized.
+
+[oop]
+patterns: what is oop | what is object oriented programming | explain oop | what are the pillars of oop | four pillars of oop
+responses: Object-oriented programming (OOP) organizes code into objects that bundle data and behavior. Its four pillars are encapsulation, abstraction, inheritance and polymorphism. Ask me about any of them!
+
+[encapsulation]
+patterns: what is encapsulation | explain encapsulation | encapsulation
+responses: Encapsulation means keeping an object's data private and only changing it through methods. My UserProfile class does this: its fields are private and it hands out copies, never the real list.
+
+[inheritance]
+patterns: what is inheritance | explain inheritance | inheritance
+responses: Inheritance lets a class reuse code from a parent class. My MathSkill, TimeSkill and MemorySkill all extend the abstract Skill class.
+
+[polymorphism]
+patterns: what is polymorphism | explain polymorphism | polymorphism
+responses: Polymorphism means one interface, many forms. I call skill.tryRespond() the same way on every skill, and each one runs its own code. I can also swap matching algorithms while running.
+
+[abstraction]
+patterns: what is abstraction | explain abstraction | abstraction
+responses: Abstraction means exposing what something does and hiding how it does it. My IntentMatcher interface says "find the best matches" without saying which algorithm to use.
+
+[data_structure]
+patterns: what is a data structure | what are data structures | explain data structures | why are data structures important
+responses: A data structure is a way of organizing data so it can be used efficiently. Examples include arrays, linked lists, stacks, queues, hash maps, trees and graphs. I use several of them myself!
+
+[stack]
+patterns: what is a stack | explain stack | how does a stack work | stack data structure
+responses: A stack is Last-In-First-Out (LIFO), like a stack of plates. You push onto the top and pop off the top. I use two stacks to solve math problems with the Shunting-Yard algorithm!
+
+[queue]
+patterns: what is a queue | explain queue | how does a queue work | queue data structure
+responses: A queue is First-In-First-Out (FIFO), like a line at a coffee shop. I keep our recent conversation in a queue: when it's full, the oldest message leaves first.
+
+[hashmap]
+patterns: what is a hashmap | what is a hash map | what is a hash table | explain hashmap | how does hashing work
+responses: A hash map stores key-value pairs. A hash function turns each key into an array index, so lookups take O(1) time on average. I use hash maps for my word index and to remember things about you.
+
+[heap]
+patterns: what is a heap | what is a priority queue | explain heap | how does a heap work
+responses: A heap is a tree where the parent is always smaller (min-heap) or larger (max-heap) than its children, so the top item is always the smallest or largest. Java's PriorityQueue is a heap. I use one to find my top 3 best guesses.
+
+[linked_list]
+patterns: what is a linked list | explain linked list | linked list vs array | how does a linked list work
+responses: A linked list is a chain of nodes where each node holds a value and a pointer to the next node. Adding or removing at the front is O(1), but finding the 10th item means walking the chain, which is O(n). An array is the opposite: O(1) to read any index, but slow to insert in the middle.
+
+[algorithm]
+patterns: what is an algorithm | explain algorithms | what are algorithms | give me an example of an algorithm
+responses: An algorithm is a step-by-step procedure for solving a problem. I use edit distance (dynamic programming) to fix typos, TF-IDF with cosine similarity to understand you, and a heap to rank my best guesses.
+
+[big_o]
+patterns: what is big o | what is big o notation | explain time complexity | what is time complexity | what is space complexity
+responses: Big O notation describes how an algorithm's running time or memory grows as the input grows. O(1) is constant, O(log n) is logarithmic, O(n) is linear and O(n^2) is quadratic.
+
+[dynamic_programming]
+patterns: what is dynamic programming | explain dynamic programming | what is memoization
+responses: Dynamic programming solves a big problem by breaking it into overlapping smaller problems and saving each answer so it is never computed twice. I use it to measure how far a typo is from a real word.
